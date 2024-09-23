@@ -41,11 +41,11 @@ const derivedWinner = (gameBoard: any, players: PlayersProps) => {
   let winner: string | null = null;
 
   for (const combination of WINNING_COMBINATIONS) {
-    const firstPlayerSymbol: string =
+    const firstPlayerSymbol: keyof PlayersProps =
       gameBoard[combination[0].row][combination[0].column];
-    const secondPlayerSymbol: string =
+    const secondPlayerSymbol: keyof PlayersProps =
       gameBoard[combination[1].row][combination[1].column];
-    const thirdPlayerSymbol: string =
+    const thirdPlayerSymbol: keyof PlayersProps =
       gameBoard[combination[2].row][combination[2].column];
     if (
       firstPlayerSymbol &&
